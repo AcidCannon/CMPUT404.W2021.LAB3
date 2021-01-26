@@ -23,7 +23,7 @@ import cgi
 import cgitb
 cgitb.enable()
 
-from cgi import escape
+from html import escape
 
 __all__ = ['login_page', 'secret_page', 'after_login_incorrect']
 
@@ -59,6 +59,9 @@ def secret_page(username=None, password=None):
         <span class="spoilers"> {password}</span>.
         </small>
     </p>
+    <p>
+    The number <span class="spoilers"> {password}</span> is, in The Hitchhiker's Guide to the Galaxy by Douglas Adams, the "Answer to the Ultimate Question of Life, the Universe, and Everything", calculated by an enormous supercomputer named Deep Thought over a period of 7.5 million years.
+    </p>
     """.format(username=escape(username.capitalize()),
                password=escape(password)))
 
@@ -71,9 +74,8 @@ def after_login_incorrect():
     return _wrapper(r"""
     <h1> Login incorrect :c </h1>
 
-    <p> Incorrect username or password (hint: <span class="spoilers"> Check
-        <code>secret.py</code>!</span>)
-    <p> <a href="login.py"> Try again. </a>
+    <p> Incorrect username or password (hint: <span class="spoilers"> What is the answer to the Ultimate Question of Life, the Universe, and Everything?</span>)
+    <p> <a href="just_login.py"> Try again. </a>
     """)
 
 
