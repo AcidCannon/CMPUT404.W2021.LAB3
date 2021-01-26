@@ -1,7 +1,7 @@
 # CMPUT404.W2021.LAB3
 This is the LAB3 solution for CMPUT404 Winter 2021.  
 LAB3 webpage: https://uofa-cmput404.github.io/lab-3-common-gateway-interface.html  
-Start from http://localhost:8080
+Start from http://localhost:8080/hello.py
 
 # LICENSE
                                  Apache License
